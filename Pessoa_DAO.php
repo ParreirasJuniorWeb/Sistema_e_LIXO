@@ -48,12 +48,6 @@ $db->connect();
 $results = $db->fetchAll(sql: "SELECT * FROM pessoa");
 print_r(value: $results);
 
-//$usuario = new Usuario_cliente(identificacao_user: 333456880,  nome: "João", email: "pedroSilva@gmail.com", endereco: "Rua Y", telefone: "11999999999", data_nascimento: "2003/09/13", senha: "123456");
-//$usuario->registrar(identificacao_user: $usuario->getIdentificacao_user(), nome: $usuario->getNome(), email: $usuario->getEmail(), endereco: $usuario->getEndereco(), telefone: $usuario->getTelefone(), data_nascimento: $usuario->getData_nascimento(), senha: $usuario->getSenha());
-
-//$db->executeQuery(sql: "INSERT INTO pessoa (identificacao, nome, email, endereco, telefone, data_nascimento, senha) VALUES (333456880, 'João', 'pedroSilva@gmail.com', 'Rua Y', '11999999999', '2003/09/13', '123456')");
-$db->disconnect();
-
 // Explicação dos métodos:
 
 // executeQuery: Executa uma consulta SQL e retorna o resultado. Se a consulta for uma instrução de modificação (INSERT, UPDATE, DELETE), retorna true. Para consultas SELECT, retorna o objeto de resultado.
