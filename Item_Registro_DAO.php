@@ -43,7 +43,7 @@ class Item_Registro_DAO extends Database_Conexao
 }
 
 //Exemplo de uso
-$db = new Item_Registro_DAO(host: 'localhost', username: 'root', password: '', dbname: 'e_lixo_system');
+$db = new Item_Registro_DAO(host: 'localhost', username: 'root', password: '', dbname: '');
 $db->connect();
 $results = $db->fetchAll(sql: "SELECT * FROM registro_item");
 print_r(value: $results);
