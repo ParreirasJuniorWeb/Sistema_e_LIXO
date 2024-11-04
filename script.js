@@ -48,11 +48,11 @@ function sendEmail(e) {
   e.preventDefault()
 
   Email.send({
-      SecureToken: "a0abe762-e3ac-4bb1-a0cf-dbc214abdeb5",
+      SecureToken: "",
   // Host : "smtp.gmail.com",
   // Username : "username", //Personal Email
   // Password : "password", // Password's Personal Email 
-  To : 'joaoparreiras2020@gmail.com',
+  To : 'example@gmail.com',
   From : document.getElementsByClassName("email").value,
   Subject : "New Contact Form Enquiry" + " Subject: " + document.getElementsByClassName("subject").value,
   Body : "Full Name: " + document.getElementsByClassName("name").value 
