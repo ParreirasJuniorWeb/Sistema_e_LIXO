@@ -28,9 +28,3 @@
 $session_email = $_SESSION['email'];
 $session_senha = $_SESSION['senha'];
 }
-//  $req = new Cliente_DAO(host: 'localhost', username: 'root', password:'886744@Jo', dbname: 'e_lixo_system');
-//  $requ->connect();
-//  $identificacao_user = random_int(min: 1000, max: 9999);
-//  $requ->executeQuery(sql: "INSERT INTO pessoa (identificacao, nome, email, endereco, telefone, data_nascimento, senha) VALUES ('$identificacao', '$nome', '$email', '$end', '$tel', '$data_nasc', $senha')");
-//  $requ->executeQuery(sql: "INSERT INTO usuario_cliente (identificacao, idPessoa) VALUES ('$identificacao_user', '$identificacao')");
-//  $requ->disconnect();
