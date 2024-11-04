@@ -43,7 +43,7 @@ class Relatorio_DAO extends Database_Conexao
 }
 
 //Exemplo de uso
-$db = new Relatorio_DAO(host: 'localhost', username: 'root', password: '', dbname: 'e_lixo_system');
+$db = new Relatorio_DAO(host: 'localhost', username: 'root', password: '', dbname: '');
 $db->connect();
 $results = $db->fetchAll(sql: "SELECT * FROM relatorios");
 print_r(value: $results);
