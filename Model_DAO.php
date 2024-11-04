@@ -25,7 +25,7 @@ class usuario_cliente_DAO extends Database_Conexao {
 
     //Métodos  construtores
     public function __construct() {
-        $this->conexao = new Database_Conexao(host: 'localhost', username: 'root', password: '886744@Jo', dbname: 'Sistema_e_LIXO');
+        $this->conexao = new Database_Conexao(host: 'localhost', username: 'root', password: '', dbname: 'Sistema_e_LIXO');
         $this->tabela = "usuarios_cliente";
     }
         //Métodos de CRUD
@@ -82,15 +82,6 @@ class usuario_cliente_DAO extends Database_Conexao {
                 $stmt = $this->conexao->prepare($sql);
             }
 }
-
-// Exemplo de uso
-// $db = new Database_Conexao(host: 'localhost', username: 'username', password: 'password', dbname: 'database_name');
-// $db->connect();
-// $results = $db->fetchAll(sql: "SELECT * FROM table_name");
-// print_r(value: $results);
-// $db->disconnect();
-
-// Explicação dos métodos:
 
 // __construct: Inicializa as variáveis de conexão com os parâmetros fornecidos.
 // connect: Estabelece a conexão com o banco de dados e verifica se a conexão foi bem-sucedida.
