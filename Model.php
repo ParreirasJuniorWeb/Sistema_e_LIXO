@@ -415,7 +415,7 @@ class ColetaDomiciliar_Amb_Trab
         function buscarEndereco($location): mixed
         {
             $client = new Client();
-            $apiKey = 'AIzaSyAd458Gehu12gysLs5zrgJewvu2q1HVV3Q'; // Substitua pela sua chave de API do Google Maps
+            $apiKey = ''; // Substitua pela sua chave de API do Google Maps
             $url = "https://maps.googleapis.com/maps/api/geocode/json?address={$location}&key={$apiKey}";
 
             try {
