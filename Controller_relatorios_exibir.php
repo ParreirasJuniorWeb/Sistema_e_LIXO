@@ -4,7 +4,7 @@ require_once("Model/Model.php");
 $location = $_POST['location'];
 //Programa em PHP que permite a busca pela localização, via dispositivo do cliente.
 //Aqui, você pode usar a API do Google Maps para obter a latitude e longitude da localização.
-$api_key = "AIzaSyAd458Gehu12gysLs5zrgJewvu2q1HVV3Q";
+$api_key = "";
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, "https://maps.googleapis.com/maps/api/geocode/json?address=$location&key=$api_key");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
