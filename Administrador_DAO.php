@@ -43,7 +43,7 @@ class Administrador_DAO extends Database_Conexao
 }
 
 //Exemplo de uso
-$db = new Administrador_DAO(host: 'localhost', username: 'root', password: '886744@Jo', dbname: 'e_lixo_system');
+$db = new Administrador_DAO(host: 'localhost', username: 'root', password: '', dbname: '');
 $db->connect();
 $results = $db->fetchAll(sql: "SELECT * FROM administrador");
 print_r(value: $results);
