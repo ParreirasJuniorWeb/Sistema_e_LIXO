@@ -1,0 +1,25 @@
+/* styles.css */
+#validation {
+    background-color: #2E865F; /* verde escuro */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#validation h2 {
+    color: #FFFFFF; /* branco */
+}
+
+#validation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#validation li {
+    padding: 10px;
+    border-bottom: 1px solid #CCCCCC; /* cinza */
+}
+
+#validation li:last-child {
+    border-bottom: none;
+}

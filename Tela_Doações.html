@@ -1,0 +1,39 @@
+<!-- donate-materials.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doar Materiais</title>
+    <link rel="stylesheet" href="Tela_Doações.css">
+</head>
+<body>
+    <header>
+        <h1>Doar Materiais</h1>
+    </header>
+    <main>
+        <form>
+            <label for="material-description">Descrição do material:</label>
+            <textarea id="material-description" name="material-description"></textarea><br><br>
+            <label for="material-pictures">Fotos do material:</label>
+            <input type="file" id="material-pictures" name="material-pictures" multiple><br><br>
+            <label for="material-condition">Estado do material:</label>
+            <select id="material-condition" name="material-condition">
+                <option value="novo">Novo</option>
+                <option value="usado">Usado</option>
+                <option value="danificado">Danificado</option>
+            </select><br><br>
+            <button type="submit">Doar</button>
+            <button type="button">Cancelar</button>
+        </form>
+        <section id="benefits">
+            <h2>Benefícios por doações</h2>
+            <ul>
+                <li>...</li>
+                <li>...</li>
+                <li>...</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

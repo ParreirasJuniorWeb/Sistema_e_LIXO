@@ -1,0 +1,205 @@
+<!-- @format -->
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entrar/Cadastrar</title>
+    <link rel="stylesheet" href="Tela_cadastrar_e-LIXO_BlackBoxAi.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Entrar/Cadastrar</h1>
+    </header>
+    <main>
+      <form class="form" id="cadastro-form" method="post" action="" >
+        <p class="title">Cadastrar</p>
+        <p class="message">Cadastre agora e tenha acesso total ao nosso app.</p>
+        <div class="flex">
+          <label>
+            <input required="" placeholder="" type="text" class="input" id="cpf-cadastro" name="identificacao_cpf"/>
+            <span>CPF</span>
+          </label>
+
+          <label>
+            <input required="" placeholder="" type="text" class="input" id="nome-cadastro" name="Pnome"/>
+            <span>Primeiro Nome</span>
+          </label>
+
+          <label>
+            <input required="" placeholder="" type="text" class="input" id="ultimo_nome-cadastro" name="Unome"/>
+            <span>Último Nome</span>
+          </label>
+        </div>
+
+        <label>
+          <input required="" placeholder="" type="date" class="input" id="data_nascimento-cadastro" name="data_nascimento"/>
+          <span>Data Nascimento</span>
+        </label>
+      </div>
+
+        <label>
+          <input required="" placeholder="" type="email" class="input" id="email-cadastro" name="email"/>
+          <span>E-mail</span>
+        </label>
+
+        <label>
+          <input required="" placeholder="" type="text" class="input" id="telefone-cadastro" name="telefone"/>
+          <span>Telefone (WhatsApp)</span>
+        </label>
+        
+        <label>
+          <input required="" placeholder="" type="text" class="input" id="cep-cadastro" onblur="pesquisacep(this.value)" name="cep"/>
+          <span>CEP</span>
+          <span class=".vcep"></span>
+        </label>
+
+        <label>
+          <input required="" placeholder="" type="text" class="input" id="endereco-cadastro" name="endereco"/>
+          <span>Endereço (opcional)</span>
+        </label>
+
+        <label>
+          <input required="" placeholder="" type="password" class="input" id="senha-cadastro" name="senha"/>
+          <span>Senha</span>
+        </label>
+        <label>
+          <input required="" placeholder="" type="password" class="input" id="confirma-senha-cadastro" name="confirma-senha"/>
+          <span>Confirme a senha</span>
+        </label>
+        <button class="submit" id="btn_submit_cadastro" type="submit" name="submit">Cadastrar</button>
+        <p class="signin">Já possui uma conta em nosso app? <a href="Tela_login_e-LIXO_BlackBoxAi.html">Login</a></p>
+      </form>
+    </main>
+    <header>
+      <h1>e-LIXO app de coleta de lixo Eletrônico</h1>
+    </header>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="/Paginas_web_eLIXO_com_bootstrap/scrip_form_login_cadastrot.js"></script>
+    <script>
+      // Pequisa por CEP
+
+      // Adicionando Javascript na Busca pelo CEP - WebService
+    
+function limpa_formulário_cep() {
+    //Limpa valores do formulário de cep.
+    document.getElementById('cep-cadastro').value = ("");
+    document.getElementById('cep-cadastro').getAttribute("placeholder").innerHTML = "00.000-000";
+
+    document.getElementById('endereco-cadastro').value = ("");
+    document.getElementById('endereco-cadastro').getAttribute("placeholder").innerHTML = " logradouro + nº/ bairro/ localidade / uf ";
+}
+
+function meu_callback(conteudo) {
+    if (!("erro" in conteudo)) {
+        //Atualiza os campos com os valores.
+        document.getElementById('endereco-cadastro').value = (conteudo.logradouro + " ") + (conteudo.bairro + " ") + (conteudo.localidade + " ") + (conteudo.uf + " ") + (conteudo.ibge + " ");
+    } //end if.
+    else {
+        //CEP não Encontrado.
+        limpa_formulário_cep();
+        alert("CEP não encontrado.");
+        document.querySelector(".vcep").style.display = "block";
+        document.querySelector(".vcep").innerHTML= "CEP não encontrado.";
+        document.querySelector(".vcep").style.color = "red";
+
+            setTimeout(function() {document.querySelector(".vcep").style.display = "none";}, 3000);
+    }
+}
+
+function pesquisacep(valor) {
+
+    //Nova variável "cep" somente com dígitos.
+    var cep = valor.replace(/\D/g, '');
+
+    //Verifica se campo cep possui valor informado.
+    if (cep != "") {
+
+        //Expressão regular para validar o CEP.
+        var validacep = /^[0-9]{8}$/;
+
+        //Valida o formato do CEP.
+        if (validacep.test(cep)) {
+
+            //Preenche os campos com "..." enquanto consulta webservice.
+            document.getElementById('endereco-cadastro').value = "...";
+            //Cria um elemento javascript.
+            var script = document.createElement('script');
+
+            //Sincroniza com o callback.
+            script.src = 'https://viacep.com.br/ws/' + cep + '/json/?callback=meu_callback';
+
+            //Insere script no documento e carrega o conteúdo.
+            document.body.appendChild(script);
+
+        } //end if.
+        else {
+            //cep é inválido.
+            limpa_formulário_cep();
+            alert("Formato de CEP inválido.");
+            document.querySelector(".vcep").style.display = "block";
+            document.querySelector(".vcep").innerHTML= "Formato de CEP inválido.";
+            document.querySelector(".vcep").style.color = "red";
+
+            setTimeout(function() {document.querySelector(".vcep").style.display = "none";}, 3000);
+        }
+    } //end if.
+    else {
+        //cep sem valor, limpa formulário.
+        limpa_formulário_cep();
+    }}
+    </script>
+    <script>
+      var creditCardCpf = $('#cpf-cadastro').val();
+      // Verificar se o CPF é válido
+      if (!validarCpf(creditCardCpf)) {
+            alert('CPF inválido!');
+            return;
+        }
+        // Função para validar o CPF
+    function validarCpf(cpf) {
+        // Verificar se o CPF tem 11 dígitos
+        if (cpf.length !== 11) {
+            return false;
+        }
+
+        // Verificar se o CPF é um número válido
+        if (!/^\d+$/.test(cpf)) {
+            return false;
+        }
+
+        // Verificar se o CPF é válido
+        var soma = 0;
+        for (var i = 0; i < 9; i++) {
+            soma += parseInt(cpf.substring(i, i + 1)) * (10 - i);
+        }
+        var resto = soma % 11;
+        if (resto < 2) {
+            resto = 0;
+        } else {
+            resto = 11 - resto;
+        }
+        if (resto !== parseInt(cpf.substring(9, 10))) {
+            return false;
+        }
+
+        soma = 0;
+        for (var i = 0; i < 10; i++) {
+            soma += parseInt(cpf.substring(i, i + 1)) * (11 - i);
+        }
+        resto = soma % 11;
+        if (resto < 2) {
+            resto = 0;
+        } else {
+            resto = 11 - resto;
+        }
+        if (resto !== parseInt(cpf.substring(10, 11))) {
+            return false;
+        }
+
+        return true;
+    }
+    </script>
+  </body>
+</html>

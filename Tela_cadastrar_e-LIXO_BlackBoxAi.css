@@ -1,0 +1,196 @@
+/* styles.css */
+@import url('https://fonts.cdnfonts.com/css/poppins');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    overflow: auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+::selection {
+    background-color: #8BC34A;
+    color: white;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+body {
+    background-image: url('/Simple Responsive Website Using Html Css With Source Code/img/park-4337477_1920.jpg'); /* imagem relacionada ao meio ambiente ou reciclagem */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header {
+    background-color: #2E865F; /* verde escuro */
+    color: #FFFFFF; /* branco */
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* From Uiverse.io by Yaya12085 */ 
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: .65rem;
+  max-width: 65rem;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 28px;
+  color: #8BC34A;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 2.5rem;
+}
+
+.title::before,.title::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 2%;
+  background-color: #8BC34A;
+}
+
+.title::before {
+  width: 18px;
+  height: 18px;
+  background-color: #8BC34A;
+}
+
+.title::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
+}
+
+.message, .signin {
+  color: rgba(88, 87, 87, 0.822);
+  font-size: 14px;
+}
+
+.signin {
+  text-align: center;
+}
+
+.signin a {
+  color: #8BC34A;
+}
+
+.signin a:hover {
+  text-decoration: underline #8BC34A;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 6px;
+}
+
+.form label {
+  position: relative;
+}
+
+.form label .input {
+  width: 100%;
+  padding: 10px 10px 20px 10px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+}
+
+.form label .input + span {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  color: grey;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+.form label .input[type="date"] + span {
+  opacity: 0.5;
+}
+.form label .input:placeholder-shown + span {
+  top: 15px;
+  font-size: 0.9em;
+  opacity: 1;
+}
+.form label .input[type="date"]:placeholder-shown + span {
+  opacity: 1;
+}
+
+.form label .input:focus + span,.form label .input:valid + span {
+  top: 30px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.form label .input:valid + span {
+  color: green;
+}
+
+.submit {
+  border: none;
+  outline: none;
+  background-color: #8BC34A;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  transform: .3s ease;
+}
+
+.submit:hover {
+  background-color: rgb(86, 222, 133);
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1050px) {
+  .flex {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  .form {
+    width: 100vw;
+  }
+}

@@ -1,0 +1,32 @@
+<!-- schedule-collection.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Coleta</title>
+    <link rel="stylesheet" href="Tela_Agendamento_e-LIXO.css">
+</head>
+<body>
+    <header>
+        <h1>Agendar Coleta</h1>
+        <img src="Imagem_do_WALL-E_sem_direitos_autorais_gerada_por_AI-removebg-preview.png" alt="logo" class="logo" />
+    </header>
+    <main>
+        <form>
+            <label for="date">Data:</label>
+            <input type="date" id="date" name="date"><br><br>
+            <label for="time">Hora:</label>
+            <input type="time" id="time" name="time"><br><br>
+            <label for="location">Local de coleta:</label>
+            <input type="text" id="location" name="location" placeholder="Entre com o CEP ou Endereço"><br><br>
+            <button type="submit">Agendar</button>
+            <button type="button">Cancelar</button>
+        </form>
+        <div id="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.131944206299!2d-43.99403340000005!3d-19.8766497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6914f073eb87b%3A0x508270d922e87186!2sPonto%20de%20Coleta%20de%20Lixo%20Eletr%C3%B4nico%20-%20PROPAM!5e0!3m2!1spt-BR!2sbr!4v1728244455311!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </main>
+    <script src="script_AP_Maps.js"></script>
+</body>
+</html>

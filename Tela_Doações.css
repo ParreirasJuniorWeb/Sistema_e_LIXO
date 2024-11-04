@@ -1,0 +1,25 @@
+/* styles.css */
+#benefits {
+    background-color: #8BC34A; /* verde claro */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#benefits h2 {
+    color: #FFFFFF; /* branco */
+}
+
+#benefits ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#benefits li {
+    padding: 10px;
+    border-bottom: 1px solid #CCCCCC; /* cinza */
+}
+
+#benefits li:last-child {
+    border-bottom: none;
+}

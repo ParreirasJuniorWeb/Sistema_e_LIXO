@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-LIXO - Coleta de Lixo Eletrônico</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        :root {
+            --light-green: #8FBC8F;
+            --dark-green: #2F4F4F;
+            --black: #000000;
+            --white: #FFFFFF;
+            --gray: #808080;
+        }
+
+        ::selection {
+            background-color: #38e016;
+            color: white;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0;
+        }
+         a {
+            text-decoration: none;
+            color: var(--black);
+         }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: var(--black);
+            background-color: var(--white);
+            background-image: url("img/park-4337477_1920.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            z-index: 1;
+            position: relative;
+        }
+
+        header {
+            background-color: var(--dark-green);
+            color: var(--white);
+            text-align: center;
+            padding: 1rem;
+            z-index: 4;
+        }
+
+        nav {
+            background-color: var(--light-green);
+            padding: 0.5rem;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--black);
+        }
+        
+        header a, footer a {
+            margin-left: 40px;
+            text-decoration: none;
+            color: #38e016;
+            height: 100%;
+            padding: 20px 0;
+            display: inline-block;
+            transition: .5s ease;
+        }
+
+        header a:hover, footer a:hover {
+            transform: scale(1.08);
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            z-index: 2;
+            background: var(--light-green);
+            border-radius: 20px;
+            padding: 5rem 6.5rem;
+            margin: 5% 10%;
+            position: relative;
+        }
+
+        section {
+            margin-bottom: 40px;
+            padding: 5rem;
+            background-color: var(--white);
+            border-radius: .5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+
+        footer {
+            background-color: var(--dark-green);
+            color: var(--white);
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .social-icons a {
+            color: var(--white);
+            margin: 0 10px;
+        }
+
+        #chatbox {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            height: 400px;
+            background-color: var(--white);
+            border: 1px solid var(--gray);
+            display: none;
+        }
+
+        .swiper {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 300px;
+      height: 300px;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>e-LIXO</h1>
+        <p>Sua parceira na coleta e reciclagem de lixo eletrônico</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#educativo">Conteúdo Educativo</a></li>
+            <li><a href="#eventos">Eventos e Cursos</a></li>
+            <li><a href="#impacto">Nosso Impacto</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <section id="home" class="swiper-slide">
+                    <h2>Bem-vindo à e-LIXO</h2>
+                    <p>Somos especialistas em coleta e reciclagem de lixo eletrônico, contribuindo para um futuro mais sustentável.</p>
+                </section>
+
+                <section id="sobre" class="swiper-slide">
+                    <h2>Sobre Nós</h2>
+                    <p>A e-LIXO é uma empresa comprometida com a preservação do meio ambiente através da gestão responsável de resíduos eletrônicos.</p>
+                </section>
+
+                <section id="servicos" class="swiper-slide">
+                    <h2>Nossos Serviços</h2>
+                    <ul>
+                        <li>Coleta de lixo eletrônico</li>
+                        <li>Reciclagem de componentes eletrônicos</li>
+                        <li>Destinação adequada de resíduos</li>
+                    </ul>
+                </section>
+
+                <section id="educativo" class="swiper-slide">
+                    <h2>Conteúdo Educativo</h2>
+                    <article>
+                        <h3>A importância da reciclagem de lixo eletrônico</h3>
+                        <p>Data: 01/05/2023</p>
+                        <p>O descarte inadequado de lixo eletrônico pode causar sérios danos ao meio ambiente. Saiba como a reciclagem correta pode fazer a diferença.</p>
+                        <a href="#">Leia mais</a>
+                    </article>
+
+                    <article>
+                        <h3>5 dicas para descartar seus eletrônicos de forma responsável</h3>
+                        <p>Data: 15/04/2023</p>
+                        <p>Confira nossas dicas para garantir que seus aparelhos eletrônicos sejam descartados de maneira segura e ecológica.</p>
+                        <a href="#">Leia mais</a>
+                    </article>
+                </section>
+
+                <section id="eventos" class="swiper-slide">
+                    <h2>Eventos e Cursos</h2>
+                    <ul>
+                        <li>Oficina de reciclagem de lixo eletrônico - 10/05/2023</li>
+                        <li>Certificação em gestão de resíduos eletrônicos - 20/05/2023</li>
+                    </ul>
+                </section>
+
+                <section id="impacto" class="swiper-slide">
+                    <h2>Nosso Impacto</h2>
+                    <p>A e-LIXO já reciclou mais de 10 toneladas de lixo eletrônico, contribuindo para a redução de 50% de resíduos no meio ambiente.</p>
+                    <ul>
+                        <li>10 toneladas de lixo eletrônico recicladas</li>
+                        <li>50% de redução de resíduos no meio ambiente</li>
+                    </ul>
+                </section>
+
+                <section id="contato" class="swiper-slide">
+                    <h2>Contato</h2>
+                    <form>
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome"><br><br>
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email"><br><br>
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem"></textarea><br><br>
+                        <input type="submit" value="Enviar">
+                    </form>
+                </section>
+
+                <div class="social-icons" class="swiper-slide">
+                    <a href="#" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+
+                <div id="chatbox" class="swiper-slide">
+                    <h2>Chat com a e-LIXO</h2>
+                    <input type="text" id="mensagem-chat" placeholder="Digite sua mensagem...">
+                    <button id="enviar-mensagem">Enviar</button>
+                    <div id="chat-log"></div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 e-LIXO. Todos os direitos reservados.</p>
+    </footer>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+   <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+        }, 
+        onSlideChange = () => console.log('slide change'));
+    </script>
+</body>
+</html>

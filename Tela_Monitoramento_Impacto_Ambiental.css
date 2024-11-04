@@ -1,0 +1,97 @@
+/* styles.css */
+* {
+    overflow: auto;
+}
+
+#carbon-footprint, #energy-consumption, #water-consumption {
+    background-color: #8BC34A; /* verde claro */
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#carbon-footprint h2, #energy-consumption h2, #water-consumption h2 {
+    color: #FFFFFF; /* branco */
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+#carbon-footprint p, #energy-consumption p, #water-consumption p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#carbon-footprint-value, #energy-consumption-value, #water-consumption-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2E865F; /* verde escuro */
+}
+
+#carbon-footprint-reduction, #energy-consumption-reduction, #water-consumption-reduction {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2E865F; /* verde escuro */
+}
+/* From Uiverse.io by andrew-demchenk0 */ 
+.buttons {
+    position: relative;
+    width: 12rem;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #17795E;
+    background-color: #209978;
+    overflow: hidden;
+    font-size: .8rem;
+  }
+  
+  .buttons, .button__icon, .button__text {
+    transition: all 0.3s;
+  }
+  
+  .buttons .button__text {
+    transform: translateX(22px);
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  .buttons .button__icon {
+    position: absolute;
+    transform: translateX(109px);
+    height: 100%;
+    width: 3.5rem;
+    background-color: #17795E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .buttons .svg {
+    width: 18px;
+    fill: #fff;
+  }
+  
+  .buttons:hover {
+    background: #17795E;
+  }
+  
+  .buttons:hover .button__text {
+    color: transparent;
+  }
+  
+  .buttons:hover .button__icon {
+    width: 148px;
+    transform: translateX(0);
+  }
+  
+  .buttons:active .button__icon {
+    background-color: #146c54;
+  }
+  
+  .buttons:active {
+    border: 1px solid #146c54;
+  }

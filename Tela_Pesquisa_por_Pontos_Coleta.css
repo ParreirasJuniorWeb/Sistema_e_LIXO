@@ -1,0 +1,7 @@
+/* styles.css */
+#map {
+    width: 100%;
+    height: 300px;
+    border: 1px solid #CCCCCC; /* cinza */
+    border-radius: 5px;
+}

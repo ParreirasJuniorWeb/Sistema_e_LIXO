@@ -1,0 +1,52 @@
+<!-- marketplace.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Relatórios</title>
+    <link rel="stylesheet" href="Tela_GestaoRelatorios.css">
+</head>
+<body>
+    <header>
+        <h1>Administração de Relatórios</h1>
+        <img src="Imagem_do_WALL-E_sem_direitos_autorais_gerada_por_AI-removebg-preview.png" alt="logo" class="logo" />
+    </header>
+    <main>
+        <form>
+            <label for="category">Categoria:</label>
+            <select id="category" name="category">
+                <option value="eletronicos">Impacto Ambiental</option>
+                <option value="moveis">Gestão de Coletas</option>
+                <option value="vestuario">Impacto Social</option>
+                <option value="vestuario">Relatório de Descarte</option>
+                <option value="vestuario">Relatório de Fiscalização</option>
+                <option value="vestuario">Relatório de Gestão de Pontos de Coletas</option>
+            </select><br><br>
+            <label for="keyword">Título ou Autor</label>
+            <input type="text" id="keyword" name="keyword"><br><br>
+            <button type="submit">Buscar</button>
+            <button type="button">Cancelar</button>
+        </form>
+        <section id="Editor_de_Relatórios">
+            <h2>Editor de Relatórios</h2>
+            <div class="gerar_relatorio">
+                <br>
+                <button type="button">Gerar Relatório</button>
+            </div>
+            <br><br>
+            <div class="relatorios">
+                <h3>Relatórios</h3>
+                <section id="real-time-monitoring">
+                    <h2>Relatórios Atuais</h2>  
+                    <ul>
+                        <li>Relatório de Gestão de Pontos de Coleta COD-01 <time>07/10/2024 16:42</time> <iframe></iframe></li>
+                        <li>Relatório de Gestão de Impacto Ambiental COD-23 <time>07/10/2024 16:42</time> <iframe></iframe></li>
+                        <li>Relatório de Gestão de Coleta COD-12 <time>07/10/2024 16:42</time> <iframe></iframe></li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

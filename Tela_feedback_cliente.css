@@ -1,0 +1,342 @@
+/* styles.css */
+
+/* header css */
+
+@import url('https://fonts.cdnfonts.com/css/poppins');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f2f2f2;
+}
+
+body::-webkit-scrollbar {
+    width: 0;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 80px 8px 0;
+}
+
+::selection {
+    color: white;
+    background-color: #1d8708;
+}
+
+a {
+    color: #000;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #38e016;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: #111b1d;
+}
+
+.navbar {
+    display: flex;
+    padding: 0 10px;
+    max-width: 1200px;
+    width: 100%;
+    align-self: center;
+    justify-content: space-between;
+}
+
+.navbar input#menu-toggler {
+    display: none;
+}
+
+.navbar #hamburger-btn {
+    cursor: pointer;
+    display: none;
+}
+
+.navbar .all-links {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .all-links li {
+    position: relative;
+    list-style: none;
+}
+
+.navbar .logo a {
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+}
+
+header a, footer a {
+    margin-left: 40px;
+    text-decoration: none;
+    color: #38e016;
+    height: 100%;
+    padding: 20px 0;
+    display: inline-block;
+    transition: .5s ease;
+}
+
+header a:hover, footer a:hover {
+    transform: scale(1.08);
+}
+
+@media screen and (max-width: 860px) {
+    .navbar .all-links {
+        position: fixed;
+        left: -100%;
+        width: 300px;
+        display: block;
+        height: 100vh;
+        top: 75px;
+        background: #333;
+        transition: left 0.3s ease;
+    }
+    .navbar #menu-toggler:checked~.all-links {
+        left: 0;
+    }
+
+    .navbar .all-links li {
+        font-size: 18px;
+    }
+
+    .navbar #hamburger-btn {
+        display: block;
+    }
+    footer a {
+        height: 0;
+    }
+}
+
+@media (max-width: 1050px) {
+ main {
+    padding: 70rem 0rem;
+ }
+}
+
+/* Main css */
+
+main {
+    display: flex;
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    height: 100%;
+    margin: 0 auto;
+    padding: 10rem 0;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url("/Simple Responsive Website Using Html Css With Source Code/img/park-4337477_1920.jpg");
+    background-position: center 65%;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: 1;
+}
+
+main::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: -1;
+}
+
+main h1 {
+    font-size: 2rem;
+    color: #FFFFFF;
+    font-weight: 400;
+    text-align: center;
+    text-transform: capitalize;
+    text-shadow: 0 12px 22px rgba(0, 0, 0, 0.5);
+    background-color: transparent;
+    border-radius: .2rem;
+    padding: 1rem;
+    z-index: 3;
+    filter: blur(.15px);
+    padding: 2rem 5rem;
+    text-transform: capitalize;
+    text-shadow: 0px 6px 15px rgba(255,255, 255, 0.2);
+    position: relative;
+}
+
+main img.logo {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 100%;
+    outline: 2px solid white;
+    border: 3px solid #8BC34A;
+    object-fit: cover;
+    object-position: center;
+    z-index: 3;
+    filter: blur(.18px);
+    position: relative;
+}
+
+main form {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: .65rem;
+    background-color: #FFFFFF;
+    border-radius: .2rem;
+    padding: 5rem 2rem;
+    font-size: 1.15rem;
+    box-shadow: 0 -12px 18px rgba(0, 255, 0, 0.4);
+}
+
+main form select {
+    padding: .75rem;
+    border-radius: .1rem;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid #8BC34A;
+    text-align: center;
+}
+
+.FeedBack_positive {
+    background-color: #155a07;
+    color: #111b1d;
+    width: 100vw;
+    min-height: 25vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #faeaea;
+    background: rgb(2,0,36);
+    background: rgb(3,36,0);
+    background: linear-gradient(98deg, rgba(3,36,0,1) 0%, rgba(30,144,5,1) 35%, rgba(210,255,0,1) 100%);
+    background-repeat: no-repeat;
+    overflow: hidden;
+    border: 0;
+    border-bottom: 5px solid black;
+    border-top: 3px double white;
+    z-index: 1;
+    color: white;
+}
+
+.FeedBack_positive h2 {
+    font-size: 2.5rem;
+}
+
+.FeedBack_positive .stars {
+    display: inline-flex;
+    gap: 3.5rem;
+}
+
+.FeedBack_positive .stars i.bx {
+    font-size: 5rem;
+}
+
+.deFeedback i {
+    transition: .2s ease;
+}
+
+.deFeedback i:hover {
+    cursor: pointer;
+    color: yellow;
+    transform: scale(1.08);
+}
+
+main form label {
+    color: #3d6d06;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    padding: 2.3rem 0;
+}
+
+main button {
+    padding: .75rem 2rem;
+    background-color: transparent;
+    color: #8BC34A;
+    border: 2px solid #8BC34A;
+    outline: none;
+    box-shadow: 0 3px 5px rgba(0, 255, 0, 0.3);
+    border-radius: .2rem;
+    cursor: pointer;
+    transition: .2s ease;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+main button:hover, main button:active {
+    background-color: #8BC34A;
+    border: none;
+    color: #FFFFFF;
+    transform: translateY(-10px);
+}
+
+main form textarea {
+    max-width: 100%;
+    width: 90rem;
+    height: 100px;
+    padding: 10px;
+    border: 2px solid #38e016; /* verde claro */
+    border-radius: 5px;
+    resize: vertical;
+    outline: 0;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #000;
+    padding: 20px 0;
+}
+
+footer div {
+    padding: 0 10px;
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer span {
+    color: #fff;
+}
+
+footer a {
+    padding: 0;
+}

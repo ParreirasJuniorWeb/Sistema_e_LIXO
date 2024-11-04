@@ -1,0 +1,16 @@
+/* styles.css */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #CCCCCC; /* cinza */
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #2E865F; /* verde escuro */
+    color: #FFFFFF; /* branco */
+}

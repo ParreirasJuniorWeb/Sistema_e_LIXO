@@ -1,0 +1,143 @@
+<!-- administration.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração de Coletas</title>
+    <link rel="stylesheet" href="Tela_admin_gestao_coleta.css">
+</head>
+<body>
+    <header>
+        <h1>Administração de Coletas</h1>
+        <img src="Imagem_do_WALL-E_sem_direitos_autorais_gerada_por_AI-removebg-preview.png" alt="logo" class="logo" />
+    </header>
+    <main>
+        <form>
+            <label for="cep">Agendamento de coletas:</label>
+            <input type="text" id="cep" name="collection-schedule" placeholder="Entre com o CEP" onblur="pesquisacep(this.value)"><br><br>
+            <label for="endereco">Rotas de coleta:</label>
+            <input type="text" id="endereco" name="collection-routes" placeholder="Entre com a Av.caminho"><br><br>
+            <button type="submit" id="btn_submit">Salvar</button>
+            <button type="button">Cancelar</button>
+        </form>
+        <section id="real-time-monitoring">
+            <h2>Monitoramento em tempo real</h2>
+            <ul>
+                <li>Engarrafamento em Av.Padre Pedro Pinto, 1200...</li>
+                <li>Atalho  em Av.Padre Pedro Pinto, 1200...</li>
+                <li>Perto do ponto de referência X...</li>
+            </ul>
+        </section>
+    </main>
+</body>
+<script>
+
+// Pequisa por CEP
+
+// Adicionando Javascript na Busca pelo CEP - WebService
+
+    function limpa_formulário_cep() {
+        //Limpa valores do formulário de cep.
+        document.getElementById('cep').value = ("");
+        document.getElementById('cep').getAttribute("placeholder").innerHTML = "00.000-000";
+
+        document.getElementById('endereco').value = ("");
+        document.getElementById('endereco').getAttribute("placeholder").innerHTML = " logradouro + nº/ bairro/ localidade / uf ";
+    }
+
+    function meu_callback(conteudo) {
+        if (!("erro" in conteudo)) {
+            //Atualiza os campos com os valores.
+            document.getElementById('endereco').value = (conteudo.logradouro + " ") + (conteudo.bairro + " ") + (conteudo.localidade + " ") + (conteudo.uf + " ") + (conteudo.ibge + " ");
+        } //end if.
+        else {
+            //CEP não Encontrado.
+            limpa_formulário_cep();
+            alert("CEP não encontrado.");
+            document.querySelector(".vcep").style.display = "block";
+            document.querySelector(".vcep").innerHTML= "CEP não encontrado. <i class='bx bx-error-circle'></i>";
+            document.querySelector(".vcep").style.color = "red";
+
+                setTimeout(function() {document.querySelector(".vcep").style.display = "none";}, 3000);
+        }
+    }
+
+    function pesquisacep(valor) {
+
+        //Nova variável "cep" somente com dígitos.
+        var cep = valor.replace(/\D/g, '');
+
+        //Verifica se campo cep possui valor informado.
+        if (cep != "") {
+
+            //Expressão regular para validar o CEP.
+            var validacep = /^[0-9]{8}$/;
+
+            //Valida o formato do CEP.
+            if (validacep.test(cep)) {
+
+                //Preenche os campos com "..." enquanto consulta webservice.
+                document.getElementById('endereco').value = "...";
+                //Cria um elemento javascript.
+                var script = document.createElement('script');
+
+                //Sincroniza com o callback.
+                script.src = 'https://viacep.com.br/ws/' + cep + '/json/?callback=meu_callback';
+
+                //Insere script no documento e carrega o conteúdo.
+                document.body.appendChild(script);
+
+            } //end if.
+            else {
+                //cep é inválido.
+                limpa_formulário_cep();
+                alert("Formato de CEP inválido.");
+                document.querySelector(".vcep").style.display = "block";
+                document.querySelector(".vcep").innerHTML= "Formato de CEP inválido. <i class='bx bx-error-circle'></i>";
+                document.querySelector(".vcep").style.color = "red";
+
+                setTimeout(function() {document.querySelector(".vcep").style.display = "none";}, 3000);
+            }
+        } //end if.
+        else {
+            //cep sem valor, limpa formulário.
+            limpa_formulário_cep();
+        }
+    }
+    
+    function ArmazenarRotas(e) {
+        e.preventDefault()
+
+        cep = document.getElementById('cep');
+        endereco = document.getElementById('endereco');
+        real_time_monitoring = document.querySelectorAll("#real-time-monitoring").getAttribute("li");
+
+        if (cep.value != "" && endereco.value != "") {
+            var data = {
+                cep: cep.value,
+                endereco: endereco.value,
+                rotas: [
+                    {
+                        // gerar um número aleatório
+                        id: Math.random(),
+                        nome: endereco,
+                        distancia: 10.5,
+                        tempo: 10.5
+                    },
+                ]
+            };
+            real_time_monitoring.forEach(li => {
+                rotas.forEach(rote => {
+                    li.innerHTML = `<i class='bx bx-map'></i> ${rote.nome} - ${rote.distancia} - ${rote.tempo}`
+                })
+            });
+        }
+        return false
+    }
+
+    btn_submit =  document.getElementById('btn_submit');
+    btn_submit.addEventListener('click', ArmazenarRotas(e));
+
+</script>
+</html>
