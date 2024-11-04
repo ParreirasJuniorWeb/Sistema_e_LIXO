@@ -43,7 +43,7 @@ class Equipe_coleta_DAO extends Database_Conexao
 }
 
 //Exemplo de uso
-$db = new Equipe_coleta_DAO(host: 'localhost', username: 'root', password: '', dbname: 'e_lixo_system');
+$db = new Equipe_coleta_DAO(host: 'localhost', username: 'root', password: '', dbname: '');
 $db->connect();
 $results = $db->fetchAll(sql: "SELECT * FROM motorista_equipe");
 print_r(value: $results);
