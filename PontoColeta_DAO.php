@@ -43,7 +43,7 @@ class PontoColeta_DAO extends Database_Conexao
 }
 
 //Exemplo de uso
-$db = new PontoColeta_DAO(host: 'localhost', username: 'root', password: '', dbname: 'e_lixo_system');
+$db = new PontoColeta_DAO(host: 'localhost', username: 'root', password: '', dbname: '');
 $db->connect();
 $results = $db->fetchAll(sql: "SELECT * FROM pontocoleta");
 print_r(value: $results);
