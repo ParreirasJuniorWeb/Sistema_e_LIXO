@@ -63,7 +63,7 @@ class Request {
                 unset($_SESSION['senha'] );
             } else {
                 if (($senha == $confirma_senha) &&  (isset($_POST['submit']))) {
-                $db = new Pessoa_DAO(host: 'localhost', username: 'root', password:'886744@Jo', dbname: 'e_lixo_system');
+                $db = new Pessoa_DAO(host: 'localhost', username: 'root', password:'', dbname: '');
                 $db->connect();
                 $db->executeQuery(sql: "INSERT INTO pessoa (identificacao, nome, email, endereco, telefone, data_nascimento, senha) VALUES ('$identificacao', '$nome', '$email', '$endereco', '$telefone', '$data_nascimento', $senha')");
                 $db->executeQuery(sql: "INSERT INTO usuario_cliente (identificacao, idPessoa) VALUES ('$identificacao_user', '$identificacao')");
