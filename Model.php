@@ -106,7 +106,7 @@ abstract class Pessoa
         //Implementação do método de login.
         //Verificar se o usuário existe e se a senha está correta.
         if ($email == $this->getIdentificacao() && $senha == $this->getSenha()) {
-            $db = new Pessoa_DAO(host: 'localhost', username: 'root', password: '886744@Jo', dbname: 'e_lixo_system');
+            $db = new Pessoa_DAO(host: 'localhost', username: 'root', password: '', dbname: '');
             $db->connect();
             $results = $db->fetchAll(sql: "SELECT * FROM pessoa WHERE email = '$email' AND  senha = '$senha'");
             $db->disconnect();
@@ -124,14 +124,14 @@ abstract class Pessoa
         $identificacao_user = random_int(1000, 9999);
         //Implementação do método de registro de um usuário.
         //Verificar se o usuário já existe.
-        $db = new Pessoa_DAO(host: 'localhost', username: 'root', password: '886744@Jo', dbname: 'e_lixo_system');
+        $db = new Pessoa_DAO(host: 'localhost', username: 'root', password: '', dbname: '');
         $db->connect();
         $results = $db->fetchAll(sql: "SELECT * FROM pessoa WHERE email = '$email' AND  senha = '$senha'");
         $db->disconnect();
         if ($results !== null) {
             echo "\nJá existe um usuário com esse e-mail.";
         } else {
-            $db = new Pessoa_DAO(host: 'localhost', username: 'root', password: '886744@Jo', dbname: 'e_lixo_system');
+            $db = new Pessoa_DAO(host: 'localhost', username: 'root', password: '', dbname: '');
             $db->connect();
             $db->executeQuery(sql: "INSERT INTO pessoa (identificacao, nome, email, endereco, telefone, data_nascimento, senha) VALUES ('$identificacao_user', '$nome', '$email', '$endereco', '$telefone', '$data_nascimento', $senha')");
             $db->disconnect();
@@ -437,7 +437,7 @@ class ColetaDomiciliar_Amb_Trab
         {
             $client = new Client();
             $apiKey = ''; // Substitua pela sua chave de API do Google Maps
-            $url = "https://maps.googleapis.com/maps/api/directions/json?origin={$origem}&destination={$destino}&key={$apiKey}";
+            $url = "";
 
             try {
                 $response = $client->request(method: 'GET', uri: $url);
@@ -620,7 +620,7 @@ class Relatorio
         //Método para salvar o objeto relatório no sistema de banco de dados MySQL.
         //Método para salvar o objeto Relatorio no sistema de banco de dados MySQL.
 
-        $db = new Relatorio_DAO(host: 'localhost', username: 'root', password: '886744@Jo', dbname: 'e_lixo_system');
+        $db = new Relatorio_DAO(host: 'localhost', username: 'root', password: '', dbname: '');
         $db->connect();
         $db->executeQuery(sql: "INSERT INTO relatorios (identificacao, dataGeracao, nome, tipo, conteudo, capacidadeBytes, proprietario, tipoArquivo, idUsuario_cliente, idAdministrador) VALUES ('$identificacao_relatorio', '$dataGeracao', '$nome', '$tipo', '$conteudo', '$capacidadeBytes', '$proprietario', '$tipoArquivo', '$idUsuario_cliente, $idAdministrador')");
         $db->disconnect();
@@ -631,7 +631,7 @@ class Relatorio
     {
         //Método para abrir o arquivo em que está localizado o relatório salvo no método 'Imprimir'.
 
-        $db = new Relatorio_DAO(host: 'localhost', username: 'root', password: '886744@Jo', dbname: 'e_lixo_system');
+        $db = new Relatorio_DAO(host: 'localhost', username: 'root', password: '', dbname: '');
         $db->connect();
         $db->fetchAll(sql: "SELECT * FROM relatorios (identificacao, dataGeracao, nome, tipo, conteudo, capacidadeBytes, proprietario, tipoArquivo, idUsuario_cliente, idAdministrador) VALUES ('$identificacao_relatorio', '$dataGeracao', '$nome', '$tipo', '$conteudo', '$capacidadeBytes', '$proprietario', '$tipoArquivo', '$idUsuario_cliente, $idAdministrador')");
         $db->disconnect();
@@ -762,7 +762,7 @@ class Agendamento_coleta extends ColetaDomiciliar_Amb_Trab
     public function salvarAgendamento($identificacao_coleta, $data, $time, $reserva, $nomeIntegrantes_equipe, $status_coleta, $idUsuario, $idEquipe, $idRelatorio): void
     {
         //Método para salvar o objeto Agendamento no sistema de banco de dados MySQL.
-        $db = new Agendamento_DAO(host: 'localhost', username: 'root', password: '886744@Jo', dbname: 'e_lixo_system');
+        $db = new Agendamento_DAO(host: 'localhost', username: 'root', password: '', dbname: '');
         $db->connect();
         $db->executeQuery(sql: "INSERT INTO agendamento_coleta (identificacao, data, hora, reservar, NomeIntegrantes_equipe, status_coleta, idUsuario_cliente, idMotorista_Equipe, idRelatorio) VALUES ('$identificacao_coleta', '$data', '$time', '$reserva', '$nomeIntegrantes_equipe', '$status_coleta', '$idUsuario', '$idEquipe', '$idRelatorio')");
         $db->disconnect();
@@ -1160,14 +1160,14 @@ class Equipe_coleta extends Pessoa
         $identificacao_equip = random_int(min: 1000, max: 9999);
         //Implementação do método de registro de um usuário.
         //Verificar se o usuário já existe.
-        $db = new Pessoa_DAO(host: 'localhost', username: 'root', password: '886744@Jo', dbname: 'e_lixo_system');
+        $db = new Pessoa_DAO(host: 'localhost', username: 'root', password: '', dbname: '');
         $db->connect();
         $results = $db->fetchAll(sql: "SELECT * FROM pessoa WHERE email = '$email' AND  senha = '$senha'");
         $db->disconnect();
         if ($results !== null) {
             echo "\nJá existe um usuário com esse e-mail.";
         } else {
-            $db = new Equipe_coleta_DAO(host: 'localhost', username: 'root', password: '886744@Jo', dbname: 'e_lixo_system');
+            $db = new Equipe_coleta_DAO(host: 'localhost', username: 'root', password: '', dbname: '');
             $db->connect();
             $db->executeQuery(sql: "INSERT INTO pessoa (identificacao, nome, email, endereco, telefone, data_nascimento, senha) VALUES ('$identificacao', '$nome', '$email', '$endereco', '$telefone', '$data_nascimento', $senha')");
             $db->executeQuery(sql: "INSERT INTO equipe_coleta (identificacao_equip, idPessoa) VALUES ('$identificacao_equip', '$identificacao')");
@@ -1332,14 +1332,14 @@ class Administrador extends Pessoa
         $identificacao_admin = random_int(min: 1000, max: 9999);
         //Implementação do método de registro de um usuário.
         //Verificar se o usuário já existe.
-        $db = new Pessoa_DAO(host: 'localhost', username: 'root', password: '886744@Jo', dbname: 'e_lixo_system');
+        $db = new Pessoa_DAO(host: 'localhost', username: 'root', password: '', dbname: '');
         $db->connect();
         $results = $db->fetchAll(sql: "SELECT * FROM pessoa WHERE email = '$email' AND  senha = '$senha'");
         $db->disconnect();
         if ($results !== null) {
             echo "\nJá existe um usuário com esse e-mail.";
         } else {
-            $db = new Administrador_DAO(host: 'localhost', username: 'root', password: '886744@Jo', dbname: 'e_lixo_system');
+            $db = new Administrador_DAO(host: 'localhost', username: 'root', password: '', dbname: '');
             $db->connect();
             $db->executeQuery(sql: "INSERT INTO pessoa (identificacao, nome, email, endereco, telefone, data_nascimento, senha) VALUES ('$identificacao', '$nome', '$email', '$endereco', '$telefone', '$data_nascimento', $senha')");
             $db->executeQuery(sql: "INSERT INTO administrador (identificacao_admin, idPessoa) VALUES ('$identificacao_admin', '$identificacao')");
@@ -1542,14 +1542,14 @@ class Fiscal extends Pessoa
         $identificacao_fiscal = random_int(min: 1000, max: 9999);
         //Implementação do método de registro de um usuário.
         //Verificar se o usuário já existe.
-        $db = new Pessoa_DAO(host: 'localhost', username: 'root', password: '886744@Jo', dbname: 'e_lixo_system');
+        $db = new Pessoa_DAO(host: 'localhost', username: 'root', password: '', dbname: '');
         $db->connect();
         $results = $db->fetchAll(sql: "SELECT * FROM pessoa WHERE email = '$email' AND  senha = '$senha'");
         $db->disconnect();
         if ($results !== null) {
             echo "\nJá existe um usuário com esse e-mail.";
         } else {
-            $db = new Fiscal_DAO(host: 'localhost', username: 'root', password: '886744@Jo', dbname: 'e_lixo_system');
+            $db = new Fiscal_DAO(host: 'localhost', username: 'root', password: '', dbname: '');
             $db->connect();
             $db->executeQuery(sql: "INSERT INTO pessoa (identificacao, nome, email, endereco, telefone, data_nascimento, senha) VALUES ('$identificacao', '$nome', '$email', '$endereco', '$telefone', '$data_nascimento', $senha')");
             $db->executeQuery(sql: "INSERT INTO fiscal (identificacao_equip, idPessoa) VALUES ('$identificacao_fiscal', '$identificacao')");
