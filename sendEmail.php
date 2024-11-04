@@ -57,7 +57,7 @@ class EmailSender {
         }
             // Remetente e destinatário
             $mail->setFrom($this->getEmail(), $this->getNome());
-            $mail->addAddress('joaoparreiras2020@gmail.com', 'João Victor Parreiras'); // Adiciona um destinatário
+            $mail->addAddress('example@gmail.com', 'Nome example'); // Adiciona um destinatário
         
             // Conteúdo do e-mail
             $mail->isHTML(true); // Define o formato do e-mail como HTML
