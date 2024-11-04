@@ -16,7 +16,7 @@ const map = {
     location_type: 'APPROXIMATE'
   },
   headers: {
-    'x-rapidapi-key': '076e9ccd84mshdbc7b64a1ec6910p104a3djsnfd294e2c1ae5',
+    'x-rapidapi-key': '',
     'x-rapidapi-host': 'google-map-places.p.rapidapi.com'
   }
 };
