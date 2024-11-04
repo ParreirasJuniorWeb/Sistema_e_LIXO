@@ -415,8 +415,7 @@ class ColetaDomiciliar_Amb_Trab
         function buscarEndereco($location): mixed
         {
             $client = new Client();
-            $apiKey = ''; // Substitua pela sua chave de API do Google Maps
-            $url = "https://maps.googleapis.com/maps/api/geocode/json?address={$location}&key={$apiKey}";
+            $apiKey = ''; // Substitua pela sua chave de API do Google Map
 
             try {
                 $response = $client->request(method: 'GET', uri: $url);
@@ -455,17 +454,6 @@ class ColetaDomiciliar_Amb_Trab
         return buscarEndereco(location: $destino) + " Rotas para o " + $CEP_cliente + ": " + buscarRotas(origem: $origem, destino: $destino);
     }
 }
-
-// Exemplo de uso
-// $cep = '31570-220'; // CEP para buscar
-// $resultadoEndereco = buscarEndereco(CEP_cliente: $CEP_cliente);
-// print_r(value: $resultadoEndereco);
-
-// $origem = 'São Paulo, SP';
-// $destino = 'Rio de Janeiro, RJ';
-// $resultadoRotas = buscarRotas(origem: $origem, destino: $destino);
-// print_r(value: $resultadoRotas);
-
 //------------------FIM DA CLASSE ColetaDomiciliar_Amb_Trab----------------//
 
 class Relatorio
