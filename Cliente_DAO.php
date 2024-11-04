@@ -41,14 +41,6 @@ class Cliente_DAO extends Database_Conexao
         return $data;
     } 
 }
-
-//Exemplo de uso
-// $db = new Cliente_DAO(host: 'localhost', username: 'root', password: '886744@Jo', dbname: 'e_lixo_system');
-// $db->connect();
-// $results = $db->fetchAll(sql: "SELECT * FROM usuario_cliente");
-// print_r(value: $results);
-// $db->disconnect();
-
 // Explicação dos métodos:
 
 // executeQuery: Executa uma consulta SQL e retorna o resultado. Se a consulta for uma instrução de modificação (INSERT, UPDATE, DELETE), retorna true. Para consultas SELECT, retorna o objeto de resultado.
