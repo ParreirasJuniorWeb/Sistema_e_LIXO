@@ -43,7 +43,7 @@ class Agendamento_DAO extends Database_Conexao
 }
 
 //Exemplo de uso
-$db = new Agendamento_DAO(host: 'localhost', username: 'root', password: '886744@Jo', dbname: 'e_lixo_system');
+$db = new Agendamento_DAO(host: 'localhost', username: 'root', password: '', dbname: '');
 $db->connect();
 $results = $db->fetchAll(sql: "SELECT * FROM agendamento_coleta");
 print_r(value: $results);
