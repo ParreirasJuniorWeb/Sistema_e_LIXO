@@ -43,7 +43,7 @@ class Descarte_DAO extends Database_Conexao
 }
 
 //Exemplo de uso
-$db = new Descarte_DAO(host: 'localhost', username: 'root', pwd, dbname: 'e_lixo_system');
+$db = new Descarte_DAO(host: 'localhost', username: 'root', pwd, dbname: '');
 $db->connect();
 $results = $db->fetchAll(sql: "SELECT * FROM descarte");
 print_r(value: $results);
