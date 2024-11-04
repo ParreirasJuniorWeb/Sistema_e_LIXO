@@ -25,7 +25,7 @@ class usuario_cliente_DAO extends Database_Conexao {
 
     //Métodos  construtores
     public function __construct() {
-        $this->conexao = new Database_Conexao(host: 'localhost', username: 'root', password: '', dbname: 'Sistema_e_LIXO');
+        $this->conexao = new Database_Conexao(host: 'localhost', username: 'root', password: '', dbname: '');
         $this->tabela = "usuarios_cliente";
     }
         //Métodos de CRUD
