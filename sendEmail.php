@@ -44,7 +44,7 @@ class EmailSender {
             $mail->Host = 'smtp.gmail.com'; // Endereço do servidor SMTP
             $mail->SMTPAuth = true; // Habilita autenticação SMTP
             $mail->Username = 'joaoparreiras2020@gmail.com'; // Seu usuário SMTP
-            $mail->Password = 'DeLux02040#MF/PaRrE!R@Zs\S.O***'; // Sua senha SMTP
+            $mail->Password = ''; // Sua senha SMTP
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Habilita criptografia TLS
             $mail->Port = 465; // Porta TCP para conexão
         
