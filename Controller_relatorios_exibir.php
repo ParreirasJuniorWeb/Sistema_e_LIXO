@@ -6,7 +6,7 @@ $location = $_POST['location'];
 //Aqui, você pode usar a API do Google Maps para obter a latitude e longitude da localização.
 $api_key = "";
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "https://maps.googleapis.com/maps/api/geocode/json?address=$location&key=$api_key");
+curl_setopt($ch, CURLOPT_URL, "");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);
 curl_close($ch);
